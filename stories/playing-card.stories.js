@@ -2,7 +2,6 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import './../src/components/playing-card/playing-card.less';
 
 import PlayingCard from './../src/components/playing-card/playing-card';
 
@@ -30,57 +29,73 @@ const joker = {
 };
 
 storiesOf('PlayingCard', module)
-  .add('not selected', () => <PlayingCard card={card}
-                                          imageLocation={'below'}
-                                          size={.2}
-                                          left={(0 * 25) + 'px'}
-                                          selected={false}
-                                          onSelect={action('selected')}
-                                          onPinned={action('pinned')}
-                                          onMoved={action('moved')}
+  .add('not selected', () => <PlayingCard
+                                card={card}
+                                imageLocation={'below'}
+                                left={(0 * 25) + 'px'}
+                                cardSelected={false}
+                                showIcons={true}
+                                onSelect={action('selected')}
+                                onPinned={action('pinned')}
+                                onMoved={action('moved')}
                             />)
-  .add('selected', () => <PlayingCard card={card}
-                                      imageLocation={'below'}
-                                      size={.2}
-                                      left={(0 * 25) + 'px'}
-                                      selected={true}
-                                      onSelect={action('selected')}
-                                      onPinned={action('pinned')}
-                                      onMoved={action('moved')}
+  .add('selected', () => <PlayingCard
+                                card={card}
+                                imageLocation={'below'}
+                                left={(0 * 25) + 'px'}
+                                cardSelected={true}
+                                showIcons={true}
+                                onSelect={action('selected')}
+                                onPinned={action('pinned')}
+                                onMoved={action('moved')}
                             />)
-  .add('pinned', () => <PlayingCard card={pinned}
-                                    imageLocation={'below'}
-                                    size={.2}
-                                    left={(0 * 25) + 'px'}
-                                    selected={true}
-                                    onSelect={action('selected')}
-                                    onPinned={action('pinned')}
-                                    onMoved={action('moved')}
+  .add('pinned', () => <PlayingCard
+                            card={pinned}
+                            imageLocation={'below'}
+                            left={(0 * 25) + 'px'}
+                            cardSelected={false}
+                            showIcons={true}
+                            onSelect={action('selected')}
+                            onPinned={action('pinned')}
+                            onMoved={action('moved')}
+                        />)
+  .add('joker below', () => <PlayingCard
+                                card={joker}
+                                imageLocation={'below'}
+                                left={(0 * 25) + 'px'}
+                                cardSelected={false}
+                                showIcons={true}
+                                onSelect={action('selected')}
+                                onPinned={action('pinned')}
+                                onMoved={action('moved')}
                             />)
-  .add('joker', () => <PlayingCard card={joker}
-                                   imageLocation={'below'}
-                                   size={.2}
-                                   left={(0 * 25) + 'px'}
-                                   selected={true}
-                                   onSelect={action('selected')}
-                                   onPinned={action('pinned')}
-                                   onMoved={action('moved')}
+  .add('joker beside', () => <PlayingCard
+                                card={joker}
+                                imageLocation={'beside'}
+                                left={(0 * 25) + 'px'}
+                                cardSelected={false}
+                                showIcons={true}
+                                onSelect={action('selected')}
+                                onPinned={action('pinned')}
+                                onMoved={action('moved')}
                             />)
-  .add('no icons', () => <PlayingCard card={card}
-                                      imageLocation={'below'}
-                                      size={.2}
-                                      left={(0 * 25) + 'px'}
-                                      selected={true}
-                                      onSelect={action('selected')}
-                                      onPinned={null}
-                                      onMoved={null}
-                            />)
-  .add('image beside', () => <PlayingCard card={card}
-                                          imageLocation={'beside'}
-                                          size={.2}
-                                          left={(0 * 25) + 'px'}
-                                          selected={true}
-                                          onSelect={action('selected')}
-                                          onPinned={action('pinned')}
-                                          onMoved={action('moved')}
+.add('no icons', () => <PlayingCard
+                            card={card}
+                            imageLocation={'below'}
+                            left={(0 * 25) + 'px'}
+                            cardSelected={true}
+                            showIcons={true}
+                            onSelect={action('selected')}
+                            onPinned={null}
+                            onMoved={null}
+                        />)
+  .add('image beside', () => <PlayingCard
+                                card={card}
+                                imageLocation={'beside'}
+                                left={(0 * 25) + 'px'}
+                                cardSelected={false}
+                                showIcons={false}
+                                onSelect={action('selected')}
+                                onPinned={action('pinned')}
+                                onMoved={action('moved')}
                             />);

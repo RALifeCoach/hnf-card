@@ -9,8 +9,16 @@ export default function IconSuit({card, imageLocation, reversed}) {
         font-weight: bold;
     `;
     const Suit = styled(SuitBase)`
-        top: ${card.suit === 'J' ? Config.baseTopMark : imageLocation === 'below' ? Config.belowOffsetTop : Config.baseTopSuit};
-        left: ${imageLocation === 'below' ? Config.baseLeftMark : Config.besideOffsetLeft};
+        top: ${card.suit === 'J'
+            ? Config.baseTopMark
+            : imageLocation === 'below'
+                ? Config.belowOffsetTop
+                : Config.baseTopSuit};
+        left: ${card.suit === 'J'
+            ? Config.baseLeftMark
+            : imageLocation === 'below'
+                ? Config.baseLeftMark
+                : Config.besideOffsetLeft};
     `;
     const SuitReversed = styled(SuitBase)`
         -moz-transform: rotate(180deg);
@@ -18,7 +26,7 @@ export default function IconSuit({card, imageLocation, reversed}) {
         -webkit-transform: rotate(180deg);
         transform: rotate(180deg);
         bottom: ${card.suit === 'J' ? Config.baseTopMark : imageLocation === 'below' ? Config.belowOffsetTop : Config.baseTopSuit};
-        right: ${imageLocation === 'below' ? Config.baseLeftMark : Config.besideOffsetLeft};
+        right: ${card.suit === 'J' ? Config.baseLeftMark : imageLocation === 'below' ? Config.baseLeftMark : Config.besideOffsetLeft};
     `;
 
     const image = Config.suitConstants[card.suit].image;

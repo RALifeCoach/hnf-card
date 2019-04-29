@@ -4,7 +4,7 @@ import IconSuit from './icon-suit';
 import IconPin from './icon-pin';
 import IconMove from './icon-move';
 
-export default function CardIcons({card, selected, imageLocation, showIcons, pinValue, onPinned, onMoved}) {
+export default function CardIcons({card, selected, imageLocation, showIcons, onPinned, onMoved}) {
     return (
         <div>
             <IconRank
@@ -32,7 +32,7 @@ export default function CardIcons({card, selected, imageLocation, showIcons, pin
             <IconPin
                 selected={selected}
                 showIcons={showIcons}
-                pinValue={pinValue}
+                pinValue={card.pinValue}
                 onPinned={onPinned}
             />
             <IconMove
