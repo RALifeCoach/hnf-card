@@ -52,6 +52,7 @@ PlayingCard.defaultProps = {
     card: null,
     imageLocation: 'below',
     left: 0,
+    cardSelected: false,
     showIcons: false,
     onSelect: null,
     onPinned: null,
