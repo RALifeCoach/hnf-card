@@ -108,4 +108,11 @@ storiesOf('PlayingCard', module)
                                 onSelect={action('selected')}
                                 onPinned={action('pinned')}
                                 onMoved={action('moved')}
+                                />)
+  .add('image top', () => <PlayingCard
+                                card={{cardText: 'here is some text'}}
+                                top='15px'
+                                onSelect={action('selected')}
+                                onPinned={action('pinned')}
+                                onMoved={action('moved')}
                             />);

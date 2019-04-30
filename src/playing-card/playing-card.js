@@ -7,6 +7,7 @@ const DEFAULTS = {
     buttonHighlight: '#f00',
     cardBackground: '#CCC5B3',
     cardMarkFontSize: '20px',
+    textColor: '#000',
     baseTopMark: '3%',
     baseTopSuit: '1%',
     baseLeftMark: '9%',
@@ -65,7 +66,12 @@ export default function PlayingCard({card, left, top, onSelect, cardSelected, st
         -moz-box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.25);
         -webkit-box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.25);
         box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.25);
-        color: ${config.suitConstants[card.suit].color}
+        color: ${card.cardText ? config.textColor : config.suitConstants[card.suit].color}
+    `;
+    const CardText = styled.div`
+        font-size: 10px;
+        padding: 5px;
+        height: auto;
     `;
 
     return (
@@ -73,9 +79,9 @@ export default function PlayingCard({card, left, top, onSelect, cardSelected, st
             onClick={onSelect ? event => selectDebounce.debounce(event) : null}
         >
             {card.cardText &&
-                <div className="s-card-text">
+                <CardText>
                     {card.cardText}
-                </div>
+                </CardText>
             }
             {!card.cardText && (
                 <CardIcons
