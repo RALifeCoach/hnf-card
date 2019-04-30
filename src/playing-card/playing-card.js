@@ -40,11 +40,9 @@ const DEFAULTS = {
     }
 };
 
-export default function PlayingCard({card, left, top, onSelect, cardSelected, styling, ...props}) {
+export default function PlayingCard({card, left, top, onSelect, selected, styling, ...props}) {
     const config = Object.assign({}, DEFAULTS, styling);
-    const [ selected, setSelect ] = useState(cardSelected);
     const selectDebounce = new Debounce(() => {
-        setSelect(!selected);
         onSelect();
     }, 300, true);
 
@@ -99,7 +97,8 @@ PlayingCard.defaultProps = {
     card: null,
     imageLocation: 'below',
     left: 0,
-    cardSelected: false,
+    top: undefined,
+    selected: false,
     showIcons: false,
     onSelect: null,
     onPinned: null,

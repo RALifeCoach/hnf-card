@@ -33,7 +33,7 @@ storiesOf('PlayingCard', module)
                                 card={card}
                                 imageLocation={'below'}
                                 left={(0 * 25) + 'px'}
-                                cardSelected={false}
+                                selected={false}
                                 showIcons={true}
                                 onSelect={action('selected')}
                                 onPinned={action('pinned')}
@@ -43,7 +43,7 @@ storiesOf('PlayingCard', module)
                                 card={card}
                                 imageLocation={'below'}
                                 left={(0 * 25) + 'px'}
-                                cardSelected={true}
+                                selected={true}
                                 showIcons={true}
                                 onSelect={action('selected')}
                                 onPinned={action('pinned')}
@@ -53,7 +53,7 @@ storiesOf('PlayingCard', module)
                             card={pinned}
                             imageLocation={'below'}
                             left={(0 * 25) + 'px'}
-                            cardSelected={false}
+                            selected={false}
                             showIcons={true}
                             onSelect={action('selected')}
                             onPinned={action('pinned')}
@@ -63,7 +63,7 @@ storiesOf('PlayingCard', module)
                                 card={joker}
                                 imageLocation={'below'}
                                 left={(0 * 25) + 'px'}
-                                cardSelected={false}
+                                selected={false}
                                 showIcons={true}
                                 onSelect={action('selected')}
                                 onPinned={action('pinned')}
@@ -73,7 +73,7 @@ storiesOf('PlayingCard', module)
                                 card={joker}
                                 imageLocation={'beside'}
                                 left={(0 * 25) + 'px'}
-                                cardSelected={false}
+                                selected={false}
                                 showIcons={true}
                                 onSelect={action('selected')}
                                 onPinned={action('pinned')}
@@ -83,7 +83,7 @@ storiesOf('PlayingCard', module)
                             card={card}
                             imageLocation={'below'}
                             left={(0 * 25) + 'px'}
-                            cardSelected={true}
+                            selected={true}
                             showIcons={true}
                             onSelect={action('selected')}
                             onPinned={null}
@@ -93,7 +93,7 @@ storiesOf('PlayingCard', module)
                                 card={card}
                                 imageLocation={'beside'}
                                 top={0}
-                                cardSelected={false}
+                                selected={false}
                                 showIcons={false}
                                 onSelect={action('selected')}
                                 onPinned={action('pinned')}
@@ -103,13 +103,13 @@ storiesOf('PlayingCard', module)
                                 card={card}
                                 imageLocation={'beside'}
                                 top='15px'
-                                cardSelected={false}
+                                selected={false}
                                 showIcons={false}
                                 onSelect={action('selected')}
                                 onPinned={action('pinned')}
                                 onMoved={action('moved')}
                                 />)
-  .add('image top', () => <PlayingCard
+  .add('text', () => <PlayingCard
                                 card={{cardText: 'here is some text'}}
                                 top='15px'
                                 onSelect={action('selected')}
