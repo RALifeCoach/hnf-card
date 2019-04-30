@@ -1,6 +1,6 @@
 {
     "name": "hnf-playing-card",
-    "version": "0.1.4",
+    "version": "0.1.5",
     "description": "The playing card component for hand and foot.",
     "main": "dist/index.js",
     "scripts": {

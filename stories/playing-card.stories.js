@@ -56,7 +56,7 @@ storiesOf('PlayingCard', module)
                             selected={false}
                             showIcons={true}
                             onSelect={action('selected')}
-                            onPinned={action('pinned')}
+                            onPinned={null}
                             onMoved={action('moved')}
                         />)
   .add('joker below', () => <PlayingCard

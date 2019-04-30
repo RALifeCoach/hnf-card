@@ -12,7 +12,7 @@ export default function IconPin({selected, showIcons, pinValue, onPinned, config
 
     const pinDebounce = new Debounce(onPinned, 300, true);
 
-    const showPin = onPinned && (pinValue > 0 || (selected && showIcons));
+    const showPin = pinValue > 0 || (selected && showIcons);
 
     if (!showPin) {
         return null;
