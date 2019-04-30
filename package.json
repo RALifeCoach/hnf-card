@@ -34,7 +34,7 @@
         "@storybook/addon-links": "^4.1.18",
         "@storybook/addons": "^4.1.18",
         "@storybook/cli": "^4.1.18",
-        "@storybook/react": "^4.0.0-alpha.24",
+        "@storybook/react": "^4.1.18",
         "babel-loader": "^8.0.4",
         "babel-plugin-styled-components": "^1.10.0",
         "babel-plugin-transform-object-rest-spread": "^7.0.0-beta.3",

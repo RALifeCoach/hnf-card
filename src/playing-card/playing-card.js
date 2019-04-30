@@ -4,18 +4,18 @@ import styled from 'styled-components';
 import CardIcons from './card-icons';
 
 const DEFAULTS = {
-    buttonHighlight = '#f00',
-    cardBackground = '#CCC5B3',
-    cardMarkFontSize = '20px',
-    baseTopMark = '3%',
-    baseTopSuit = '1%',
-    baseLeftMark = '9%',
-    baseLeftSuit = '5%',
-    belowOffsetTop = '30%',
-    pinOffsetTop = '60%',
-    moveOffsetTop = '80%',
-    besideOffsetLeft = '30%',
-    suitConstants = {
+    buttonHighlight: '#f00',
+    cardBackground: '#CCC5B3',
+    cardMarkFontSize: '20px',
+    baseTopMark: '3%',
+    baseTopSuit: '1%',
+    baseLeftMark: '9%',
+    baseLeftSuit: '5%',
+    belowOffsetTop: '30%',
+    pinOffsetTop: '60%',
+    moveOffsetTop: '80%',
+    besideOffsetLeft: '30%',
+    suitConstants: {
         C: {
             image: String.fromCharCode(9827),
             color: '#000'
@@ -39,7 +39,7 @@ const DEFAULTS = {
     }
 };
 
-export default function PlayingCard({card, left, onSelect, cardSelected, styling, ...props}) {
+export default function PlayingCard({card, left, top, onSelect, cardSelected, styling, ...props}) {
     const config = Object.assign({}, DEFAULTS, styling);
     const [ selected, setSelect ] = useState(cardSelected);
     const selectDebounce = new Debounce(() => {
@@ -49,19 +49,23 @@ export default function PlayingCard({card, left, onSelect, cardSelected, styling
 
     const Card = styled.div`
         position: absolute;
-        left: ${left};
+        left: ${left || 0};
         width: 70px;
         height: 98px;
         overflow: hidden;
-        margin-top: ${selected ? 0 : '10px'};
-        background: ${Config.cardBackground};
+        margin-top: ${top !== undefined
+            ? top
+            : selected
+                ? 0
+                : '10px'};
+        background: ${config.cardBackground};
         -moz-border-radius: 12px;
         -webkit-border-radius: 12px;
         border-radius: 12px;
         -moz-box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.25);
         -webkit-box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.25);
         box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.25);
-        color: ${Config.suitConstants[card.suit].color}
+        color: ${config.suitConstants[card.suit].color}
     `;
 
     return (

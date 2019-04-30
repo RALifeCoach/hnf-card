@@ -92,7 +92,17 @@ storiesOf('PlayingCard', module)
   .add('image beside', () => <PlayingCard
                                 card={card}
                                 imageLocation={'beside'}
-                                left={(0 * 25) + 'px'}
+                                top={0}
+                                cardSelected={false}
+                                showIcons={false}
+                                onSelect={action('selected')}
+                                onPinned={action('pinned')}
+                                onMoved={action('moved')}
+                                />)
+  .add('image top', () => <PlayingCard
+                                card={card}
+                                imageLocation={'beside'}
+                                top='15px'
                                 cardSelected={false}
                                 showIcons={false}
                                 onSelect={action('selected')}

@@ -4,7 +4,7 @@ import IconSuit from './icon-suit';
 import IconPin from './icon-pin';
 import IconMove from './icon-move';
 
-export default function CardIcons({card, selected, imageLocation, showIcons, onPinned, onMoved}) {
+export default function CardIcons({card, selected, imageLocation, showIcons, onPinned, onMoved, config}) {
     return (
         <div>
             <IconRank

@@ -3,21 +3,21 @@ import styled from 'styled-components';
 
 export default function IconRank({card, reversed, config}) {
     const RankBase = styled.div`
-        font-size: ${Config.cardMarkFontSize};
+        font-size: ${config.cardMarkFontSize};
         position: absolute;
         font-weight: bold;
     `;
     const Rank = styled(RankBase)`
-        top: ${Config.baseTopMark};
-        left: ${Config.baseLeftMark};
+        top: ${config.baseTopMark};
+        left: ${config.baseLeftMark};
     `;
     const RankReversed = styled(RankBase)`
         -moz-transform: rotate(180deg);
         -ms-transform: rotate(180deg);
         -webkit-transform: rotate(180deg);
         transform: rotate(180deg);
-        bottom: ${Config.baseTopMark};
-        right: ${Config.baseLeftMark};
+        bottom: ${config.baseTopMark};
+        right: ${config.baseLeftMark};
     `;
 
     if (card.suit === 'J') {
