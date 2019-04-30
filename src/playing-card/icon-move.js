@@ -1,16 +1,12 @@
 import React from 'react';
-import Debounce from '../../utils/debounce';
+import Debounce from '../utils/debounce';
 import styled from 'styled-components';
-import Config from '../../utils/config';
-import IconRank from './icon-rank';
-import IconSuit from './icon-suit';
-import IconPin from './icon-pin';
 
-export default function IconMove({showIcons, selected, onMoved}) {
+export default function IconMove({showIcons, selected, onMoved, config}) {
     const Move = styled.i`
         position: absolute;
-        top: ${Config.moveOffsetTop};
-        left: ${Config.baseLeftMark};
+        top: ${config.moveOffsetTop};
+        left: ${config.baseLeftMark};
     `;
 
     const moveDebounce = new Debounce(onMoved, 300, true);

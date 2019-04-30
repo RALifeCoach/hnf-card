@@ -1,10 +1,46 @@
 import React, { useState } from 'react';
-import Debounce from './../../utils/debounce';
+import Debounce from './../utils/debounce';
 import styled from 'styled-components';
-import Config from '../../utils/config';
 import CardIcons from './card-icons';
 
-export default function PlayingCard({card, left, onSelect, cardSelected, ...props}) {
+const DEFAULTS = {
+    buttonHighlight = '#f00',
+    cardBackground = '#CCC5B3',
+    cardMarkFontSize = '20px',
+    baseTopMark = '3%',
+    baseTopSuit = '1%',
+    baseLeftMark = '9%',
+    baseLeftSuit = '5%',
+    belowOffsetTop = '30%',
+    pinOffsetTop = '60%',
+    moveOffsetTop = '80%',
+    besideOffsetLeft = '30%',
+    suitConstants = {
+        C: {
+            image: String.fromCharCode(9827),
+            color: '#000'
+        },
+        D: {
+            image: String.fromCharCode(9830),
+            color: '#F00'
+        },
+        H: {
+            image: String.fromCharCode(9829),
+            color: '#F00'
+        },
+        S: {
+            image: String.fromCharCode(9824),
+            color: '#000'
+        },
+        J: {
+            image: String.fromCharCode(9733),
+            color: '#00F'
+        }
+    }
+};
+
+export default function PlayingCard({card, left, onSelect, cardSelected, styling, ...props}) {
+    const config = Object.assign({}, DEFAULTS, styling);
     const [ selected, setSelect ] = useState(cardSelected);
     const selectDebounce = new Debounce(() => {
         setSelect(!selected);
@@ -41,6 +77,7 @@ export default function PlayingCard({card, left, onSelect, cardSelected, ...prop
                 <CardIcons
                     card={card}
                     selected={selected}
+                    config={config}
                     {...props}
                 />
             )}

@@ -1,1 +1,9 @@
-/src
+src/
+stories/
+node_modules/
+.idea/
+.git/
+package-lock.json
+._.git/
+._.idea/
+.storybook/

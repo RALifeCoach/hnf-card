@@ -1,13 +1,12 @@
 import React from 'react';
-import Debounce from '../../utils/debounce';
+import Debounce from '../utils/debounce';
 import styled from 'styled-components';
-import Config from '../../utils/config';
 
-export default function IconPin({selected, showIcons, pinValue, onPinned}) {
+export default function IconPin({selected, showIcons, pinValue, onPinned, config}) {
     const Pin = styled.i`
         position: absolute;
-        top: ${Config.pinOffsetTop};
-        left: ${Config.baseLeftMark};
+        top: ${config.pinOffsetTop};
+        left: ${config.baseLeftMark};
         opacity: ${selected ? 1 : .2};
     `;
 

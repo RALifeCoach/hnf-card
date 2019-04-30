@@ -3,7 +3,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
-import PlayingCard from './../src/components/playing-card/playing-card';
+import PlayingCard from '../src/playing-card/playing-card';
 
 const card = {
     suit: 'C',

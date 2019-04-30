@@ -2,7 +2,7 @@ module.exports = {
     devtool: 'source-map',
 
     entry:  {
-        app : __dirname + "/src/index.js",
+        app : __dirname + "/src/playing-card/playing-card.js",
     },
 
     output: {
@@ -31,15 +31,6 @@ module.exports = {
                         }
                     }
                 ]
-            },
-            {
-                test: /\.scss$/,
-                loaders: ['style-loader', 'css-loader', 'sass-loader']
-            },
-            {
-                test: /\.(css)$/,
-                include: [/src/, /node_modules/],
-                use: [ 'style-loader', 'css-loader' ]
             },
             {
                 test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,

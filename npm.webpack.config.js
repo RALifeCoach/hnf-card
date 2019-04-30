@@ -2,31 +2,27 @@ var path = require('path');
 module.exports = {
     devtool: 'source-map',
 
-    entry: './src/npm.index.js',
+    entry: './src/playing-card/playing-card.js',
 
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'index.js',
         libraryTarget: 'commonjs2'
     },
-
     module: {
         rules: [
             {
-                test: /\.js$/,
-                include: path.resolve(__dirname, 'src'),
+                test: /\.js?$/,
+                include: /src/,
                 exclude: /(node_modules|dist)/,
                 use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['env']
-                    }
+                    loader: "babel-loader"
                 }
             }
         ]
     },
-
     externals: {
+        'styled-components': 'commonjs styled-components',
         'react': 'commonjs react'
     }
 };

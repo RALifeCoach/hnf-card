@@ -10,23 +10,27 @@ export default function CardIcons({card, selected, imageLocation, showIcons, onP
             <IconRank
                 card={card}
                 reversed={false}
+                config={config}
                 key={0}
             />
             <IconSuit
                 card={card}
                 imageLocation={imageLocation}
                 reversed={false}
+                config={config}
                 key={1}
             />
             <IconSuit
                 card={card}
                 imageLocation={imageLocation}
                 reversed={true}
+                config={config}
                 key={2}
             />
             <IconRank
                 card={card}
                 reversed={true}
+                config={config}
                 key={3}
             />
             <IconPin
@@ -34,11 +38,13 @@ export default function CardIcons({card, selected, imageLocation, showIcons, onP
                 showIcons={showIcons}
                 pinValue={card.pinValue}
                 onPinned={onPinned}
+                config={config}
             />
             <IconMove
                 selected={selected}
                 showIcons={showIcons}
                 onMoved={onMoved}
+                config={config}
             />
         </div>
     );
